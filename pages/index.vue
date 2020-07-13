@@ -6,7 +6,7 @@
         nuxtjs
       </h1>
       <h2 class="subtitle">
-        My astonishing Nuxt.js project
+       This is my first Vue project, using Nuxt.js
       </h2>
       <div class="links">
         <a
