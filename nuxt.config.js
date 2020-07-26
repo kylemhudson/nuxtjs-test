@@ -1,3 +1,5 @@
+const path = require('path')
+
 export default {
   mode: 'spa',
   /*
@@ -23,7 +25,9 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    './assets/styles/tailwind.css',
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -32,13 +36,20 @@ export default {
    ** Nuxt.js modules
    */
   modules: [],
-  /*
-   ** Build configuration
-   */
-  build: {
     /*
-     ** You can extend webpack config here
-     */
+    ** Build configuration
+    */
+  build: {
+    postcss: {
+      plugins: {
+        'postcss-import': {},
+        tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
+        'postcss-nested': {}
+      }
+    },
+    preset: {
+      stage: 1,
+    },
     extend(config, ctx) {},
   },
 };
