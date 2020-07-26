@@ -3,7 +3,7 @@ backend:
     branch: master
   media_folder: public/img
   public_folder: img
-  collections:
+collections:
     - name: "pages"
       label: "Pages"
       files:
