@@ -41,15 +41,22 @@ export default {
     */
   build: {
     postcss: {
+      // Add plugin names as key and arguments as value
+      // Install them before as dependencies with npm or yarn
       plugins: {
-        'postcss-import': {},
-        tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
-        'postcss-nested': {}
-      }
-    },
-    preset: {
-      stage: 1,
-    },
+        // Disable a plugin by passing false as value
+        'postcss-url': false,
+        'postcss-nested': {},
+        'postcss-responsive-type': {},
+        'postcss-hexrgba': {}
+      },
+      preset: {
+        // Change the postcss-preset-env settings
+        autoprefixer: {
+          grid: true
+        }
+      },
     extend(config, ctx) {},
-  },
+    },
+  }
 };
